@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
                 bottom: TabBar(
                   tabs: [
                     Tab(text: 'About PCOS', icon: Icon(Icons.info_outline , size: 27.5,),),
-                    Tab(text: 'Test', icon: FaIcon(FontAwesomeIcons.stethoscope , size: 27.5,)),
+                    Tab(text: 'Tests', icon: FaIcon(FontAwesomeIcons.stethoscope , size: 27.5,)),
                     Tab(text: 'Remedies', icon: FaIcon(FontAwesomeIcons.bookMedical , size: 27.5,)),
                   ],
                   indicatorColor: Colors.white,

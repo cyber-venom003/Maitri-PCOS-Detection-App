@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class ExpansionCard extends StatelessWidget {
-  ExpansionCard({@required this.heading , @required this.content , this.contentListTile});
+class ExpansionCard extends StatefulWidget {
+  ExpansionCard({@required this.heading , @required this.content});
   final String heading;
   final String content;
-  final List<Widget> contentListTile;
+  @override
+  _ExpansionCardState createState() => _ExpansionCardState();
+}
+
+class _ExpansionCardState extends State<ExpansionCard> {
+  IconData cardTrailIcon = FontAwesomeIcons.chevronDown;
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
@@ -19,17 +24,17 @@ class ExpansionCard extends StatelessWidget {
       child: Card(
         child: ExpansionTile(
           title: Text(
-            "$heading",
+            "${widget.heading}",
             style: TextStyle(
                 fontSize: 22.5,
                 fontWeight: FontWeight.w500
             ),
             textAlign: TextAlign.center,
           ),
-          childrenPadding: EdgeInsets.fromLTRB(10, 2, 10, 7.5),
+          childrenPadding: EdgeInsets.symmetric(vertical: 10 , horizontal: 10),
           children: [
             Text(
-              "$content",
+              "${widget.content}",
               style: TextStyle(
                   fontFamily: "Product Sans",
                   fontSize: 18.5
@@ -37,7 +42,12 @@ class ExpansionCard extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ],
-          trailing: FaIcon(FontAwesomeIcons.chevronDown , color: Color(0xFFCE0C0C)),
+          trailing: FaIcon(cardTrailIcon , color: Color(0xFFCE0C0C)),
+          onExpansionChanged: (value){
+            setState(() {
+              cardTrailIcon = value == true ? FontAwesomeIcons.chevronUp : FontAwesomeIcons.chevronDown;
+            });
+          },
         ),
         elevation: 2,
       ),

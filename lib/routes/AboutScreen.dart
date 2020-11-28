@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/ExpansionCard.dart';
+import '../constants.dart';
 
 class AboutScreen extends StatelessWidget {
   @override
@@ -20,20 +21,20 @@ class AboutScreen extends StatelessWidget {
                   color: Colors.black
               ),
             ),
-            SizedBox(height: 22.5,),
+            SizedBox(height: 36.5,),
             ExpansionCard(
                 heading: "What is PCOS?",
-                content: "Polycystic Ovary Syndrome, or PCOS, is a health condition that affects about 10 million people in the world. The exact cause is unknown, but it is considered a hormonal problem. Genetics and environmental factors are believed to be involved in the development of PCOS. It is a leading cause of female infertility and is responsible for a number of symptoms that can affect the body physically and emotionally.",
+                content: kPcosDetails,
             ),
             SizedBox(height: 20,),
             ExpansionCard(
                 heading: "Diagnosis of PCOS",
-                content: "Symptoms of PCOS may begin shortly after puberty, but can also develop during the later teen years and early adulthood. People with PCOS typically have irregular or missed periods as a result of not ovulating. Although some people may develop cysts on their ovaries, many people do not."
+                content: kPcosDiagnosis,
             ),
             SizedBox(height: 20,),
             ExpansionCard(
                 heading: "Symptoms of PCOS",
-                content: "Common symptoms incluce: \n \n Weight gain \n Fatigue \n Unwanted hair growth \n Thinning hair on the head \n Infertility \n Acne \n Mood changes \n Pelvic pain \n Headaches \n Sleep problems"
+                content: kPcosSymptoms,
             )
           ]
         )
